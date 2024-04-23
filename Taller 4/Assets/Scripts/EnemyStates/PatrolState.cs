@@ -7,7 +7,7 @@ public class PatrolState : MonoBehaviour
     private EnemyMachine enemyMachine;
     public Transform [] wayPoints;
     private NavMeshControl navMeshControl;
-    private int nextWayPoint;
+    private int nextWayPoint = 0;
 
     void Start()
     {
@@ -15,7 +15,6 @@ public class PatrolState : MonoBehaviour
         navMeshControl = GetComponent<NavMeshControl>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (navMeshControl.DestinyArrived())

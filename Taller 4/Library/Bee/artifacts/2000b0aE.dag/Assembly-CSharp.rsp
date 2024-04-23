@@ -338,13 +338,21 @@
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"T:/unity/2022.3.14f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"T:/unity/2022.3.14f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/Scripts/CombatZone/CombatZoneManager.cs"
 "Assets/Scripts/EnemyStates/AttackState.cs"
+"Assets/Scripts/EnemyStates/ChaseCZ.cs"
 "Assets/Scripts/EnemyStates/ChaseState.cs"
+"Assets/Scripts/EnemyStates/EnemyLIfe.cs"
 "Assets/Scripts/EnemyStates/EnemyMachine.cs"
 "Assets/Scripts/EnemyStates/NavMeshControl.cs"
 "Assets/Scripts/EnemyStates/PatrolState.cs"
-"Assets/Scripts/PlayerController.cs"
-"Assets/Scripts/Sword.cs"
+"Assets/Scripts/Funcionalidades/CameraPointer.cs"
+"Assets/Scripts/Funcionalidades/GameManager.cs"
+"Assets/Scripts/Funcionalidades/PointsSystem.cs"
+"Assets/Scripts/Player/PlayerCombat.cs"
+"Assets/Scripts/Player/PlayerController.cs"
+"Assets/Scripts/Player/PlayerLife.cs"
+"Assets/Scripts/Player/Sword.cs"
 -langversion:9.0
 
 /deterministic

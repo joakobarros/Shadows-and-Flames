@@ -6,11 +6,9 @@ public class ChaseState : MonoBehaviour
 {
     private EnemyMachine enemyMachine;
     private NavMeshControl navMeshControl;
+    public Transform objective;
+    [SerializeField] private float speed = 5f; 
 
-    private void OnEnable() 
-    {
-        navMeshControl.NavMeshDestiny();    
-    }
     void Start()
     {
         enemyMachine = GetComponent<EnemyMachine>();
@@ -18,9 +16,7 @@ public class ChaseState : MonoBehaviour
     }
     void Update()
     {
-        if (navMeshControl.DestinyArrived())
-        {
-            enemyMachine.ActivateState(enemyMachine.AttackState);
-        }
+        transform.position = Vector3.MoveTowards(transform.position, objective.position, speed * Time.deltaTime);
     }
+
 }

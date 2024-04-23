@@ -18,7 +18,7 @@ public class NavMeshControl : MonoBehaviour
         navMeshAgent.isStopped = false;
     }
 
-     public void NavMeshDestiny()
+     public void NavMeshDestiny2()
     {
        NavMeshDestiny(objective.position);
     }
