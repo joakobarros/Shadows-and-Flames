@@ -135,4 +135,4 @@ MonoBehaviour:
   lifeMax: 3
   lifeNow: 0
   points: 5
-  damage: 10
+  damage: 5

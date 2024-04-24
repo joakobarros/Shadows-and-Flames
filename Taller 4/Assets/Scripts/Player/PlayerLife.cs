@@ -24,4 +24,13 @@ public class PlayerLife : MonoBehaviour
     {
         lifeNow -= damage;
     }
+
+    public void Healing(float heal)
+    {
+        lifeNow += heal;
+        if(lifeNow > lifeMax)
+        {
+            lifeNow = lifeMax;
+        }
+    }
 }

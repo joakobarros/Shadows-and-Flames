@@ -10,20 +10,30 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float turnSmoothTime = 0.1f;
     [SerializeField] private float jumpForce = 5f; 
     [SerializeField] private bool jumping;
+    [SerializeField] private float fallTime;
+    [SerializeField] private float fallDamage;
 
     private Rigidbody rb;
     private float turnVelocity;
     private Vector3 direction;
     public Transform orientation;
-
+    private GameObject me;
+    
+    
 
     void Start() 
     {
         rb = GetComponent<Rigidbody>();  
+        me = this.gameObject;
     }
     void Update()
     {
         Movimiento();
+
+        if (!jumping)
+        {
+            fallTime += Time.deltaTime;
+        }
     }
 
     private void Movimiento()
@@ -66,6 +76,24 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other) 
     {
-        jumping = true;    
+        if (other.gameObject.CompareTag("Platform"))
+        {
+            jumping = true;
+
+            if (fallTime > fallDamage)
+            {
+                me.GetComponent<PlayerLife>().OnHit(5 * fallDamage);
+            }
+
+            fallTime = 0;
+        } 
+    }
+
+    private void OnCollisionExit(Collision other) 
+    {
+         if (other.gameObject.CompareTag("Platform"))
+         {
+            jumping = false;
+         }
     }
 }

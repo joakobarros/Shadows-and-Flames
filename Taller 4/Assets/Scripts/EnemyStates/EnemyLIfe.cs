@@ -39,7 +39,7 @@ public class EnemyLIfe : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //other.gameObject.GetComponent<PlayerLife>().OnHit(damage);
+            other.gameObject.GetComponent<PlayerLife>().OnHit(damage);
         }    
     }
 }
