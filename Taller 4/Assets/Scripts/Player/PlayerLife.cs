@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
-
     public Image lifeBar;
     [SerializeField]private float lifeNow;
     [SerializeField] private float lifeMax;
@@ -18,6 +17,11 @@ public class PlayerLife : MonoBehaviour
     void Update()
     {   
         lifeBar.fillAmount = lifeNow/lifeMax;
+
+        if (lifeNow <= lifeMax)
+        {
+            //SceneManage.Instance.Tutorial();
+        }
     }
 
     public void OnHit(float damage)

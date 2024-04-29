@@ -350,6 +350,7 @@
 "Assets/Scripts/Funcionalidades/GameManager.cs"
 "Assets/Scripts/Funcionalidades/Heal.cs"
 "Assets/Scripts/Funcionalidades/PointsSystem.cs"
+"Assets/Scripts/Funcionalidades/PuertaFinal.cs"
 "Assets/Scripts/Funcionalidades/SceneManage.cs"
 "Assets/Scripts/Player/PlayerCombat.cs"
 "Assets/Scripts/Player/PlayerController.cs"

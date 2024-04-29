@@ -10,9 +10,11 @@ public class PointsSystem : MonoBehaviour
     public TextMeshProUGUI totalPoints;
     public TextMeshProUGUI totalHits;
     public TextMeshProUGUI comboCalif;
+    public TextMeshProUGUI comboActual;
     private int hitsCounter;
     private float countPoints;
-    private char combo;
+    private char clasi;
+    private string combo;
     private float multiplicator = 1f;
     private bool fighting;
     [SerializeField] private float timerMarker = 0;
@@ -35,7 +37,8 @@ public class PointsSystem : MonoBehaviour
         PointCalculator();
         totalPoints.text = ("puntos: " + (countPoints).ToString());
         totalHits.text = ("Golpes: " + hitsCounter);
-        comboCalif.text = (combo.ToString());
+        comboCalif.text = (clasi.ToString());
+        comboActual.text = (combo);
 
         if (fighting && timerMarker < timerReset)
         {
@@ -60,22 +63,22 @@ public class PointsSystem : MonoBehaviour
         switch (hitsCounter)
         {
             case 2:
-                combo = 'C';
+                clasi = 'C';
                 multiplicator = 1.2f;
             break;
 
             case 6:
-                combo = 'B';
+                clasi = 'B';
                 multiplicator = 1.5f;
             break;
 
             case 8:
-                combo = 'A';
+                clasi = 'A';
                 multiplicator = 1.7f;
             break;
 
             case 10:
-                combo = 'S';
+                clasi = 'S';
                 multiplicator = 2f;
             break;
 
@@ -87,7 +90,7 @@ public class PointsSystem : MonoBehaviour
     public void CounterReset()
     {
         hitsCounter = 0;
-        combo = ' ';
+        clasi = ' ';
         multiplicator = 1f;
         timerMarker = 0;
         fighting = false;
@@ -103,6 +106,11 @@ public class PointsSystem : MonoBehaviour
     public void CountPoints (int points)
     {
         countPoints += points * multiplicator;
+    }
+
+    public void SetCombo(string comboNow)
+    {
+        combo = comboNow;
     }
 
 }
